@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/md5.js"></script>
+</head>
+<body>
+<div id="url">
+
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        var reqtick = Math.round(new Date() / 1000);
+        var uid = 14456;
+        var money = 100;
+        var type = 0;
+        var orderid = 657812195242;
+        var apikey = "testwxhb123";
+        var sign = uid + "" + type + "" + orderid + "" + money + "" + reqtick + "" + apikey;
+        console.log(sign);
+        console.log(hex_md5(sign));
+        $.ajax({
+            type: 'GET',
+            url: 'https://www.yaoyaola.cn/index.php/exapi/hbticket',
+            dataType: 'json',
+            data: {
+                uid: uid,
+                money: money,
+                type: type,
+                orderid: orderid,
+                reqtick: reqtick,
+                title: "fafafa",
+                sendname: "luckyou",
+                wishing: 'bangbagn',
+                sign: hex_md5(sign)
+            },
+            success: function (res) {
+                console.log(res);
+            }
+        });
+    });
+</script>
+</html>

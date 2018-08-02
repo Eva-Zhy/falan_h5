@@ -1,0 +1,78 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.container {
+    width: 100%;
+    height:80%;
+    position: absolute;
+    top: 7%;
+}
+#canvas2 {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.share-img {
+    position: absolute;
+    z-index: 10000;
+    width: 300px;
+    height: 300px;
+}
+
+#mainCanvas{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
+
+.div1 {
+    width: 130px;
+    height: 4%;
+    font-size: 16px;
+    float: left;
+    margin-top:2%;
+    margin-left: 2%;
+}
+
+.div2 {
+    width: 25%;
+    height: 4%;
+    text-align: center;
+    font-size: 16px;
+    background: #f65640;
+    position: absolute;
+    left: 37.5%;
+    top: 1.5%;
+    display: table;
+}
+
+#mainVideo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+.a1 {
+    text-decoration: none;
+}
+
+.a2 {
+    text-decoration: none;
+    color: #FFFFFF
+}
+
+.image {
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    bottom: 0;
+    z-index: 1000;
+}

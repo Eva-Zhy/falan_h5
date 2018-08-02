@@ -1,0 +1,20 @@
+
+#top_banner_iphone {
+    height:240px;
+    background-image: url("../img/ILC header_768x240.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#nav_bar_iphone {
+    height: 60px;
+}
+#nav_item_iphone1 {
+    line-height: 60px;
+}
+#nav_item_iphone2 {
+    line-height: 60px;
+}
+#nav_item_iphone3 {
+    line-height: 60px;
+}

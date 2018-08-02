@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'SourceHanSansCN';
+    src: url('../font/messeunivers-lightitalic.woff.ttf');
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'SourceHanSansCN';
+}
+
+#main {
+    height: 100%;
+}
+
+.top_banner {
+    width: 100%;
+    height: 161px;
+    float: left;
+    background-image: url("../img/ILC header_414x161.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.nav_bar {
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+    float: left;
+    display: flex;
+}
+
+.nav_item {
+    margin-left: 15px;
+    margin-right: 15px;
+    flex: 1;
+    text-align: center;
+    line-height: 40px;
+}
+
+.nav_border {
+    border-bottom: 1px #000 solid;
+}
+
+.goods_show {
+    width: 100%;
+    float: left;
+    /*position: absolute;*/
+    display: none;
+}
+
+.goods_show2 {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+}
+
+.select_text {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    display: table;
+    float: left;
+}
+.select_text2 {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    display: table;
+    position: absolute;
+    bottom: 2%;
+}
+
+.name_text {
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    display: table;
+    float: left;
+}
+
+.goods_div {
+    width: 100%;
+    height: 50%;
+    float: left;
+}
+
+.goods_item {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.select_btn {
+    width: 100%;
+    height: 10%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select_btn2 {
+    width: 100%;
+    height: 20%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.go_btn {
+    width: 100px;
+    height: 35px;
+    background-color: #f65640;
+    text-align: center;
+    line-height: 35px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.goods1 {
+    height: 95%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2.5%;
+}
+.goods_ipad_img {
+    height: 65%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2.5%;
+}
