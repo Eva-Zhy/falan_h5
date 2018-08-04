@@ -73,6 +73,14 @@
 </head>
 <body>
 <div id="main">
+    <div class="goweb">
+        <div class="goweb_text">
+            <div style=" width: 100%; color: #FFFFFF; display:table-cell; vertical-align:middle;">
+                请使用浏览器打开！<br/>
+                GO
+            </div>
+        </div>
+    </div>
     <div id="top_banner_iphone" class="top_banner">
 
     </div>
@@ -88,7 +96,6 @@
         </div>
     </div>
     <div id="goods_show_iphone" class="goods_show">
-
         <div class="swiper-container swiper-container-father" style="height: 100%">
             <div class="swiper-wrapper">
                 <div class="swiper-slide slide1">
@@ -390,6 +397,7 @@
         </div>
     </div>
 </div>
+
 </body>
 <script type="text/javascript">
     /*
@@ -404,7 +412,7 @@
                 presto: u.indexOf('Presto') > -1, //opera内核
                 webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
                 gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-                mobile: !!u.match(/AppleWebKit.*Mobile.*/) || u.indexOf('iPad') > -1 || u.indexOf('Nexus') > -1 || u.indexOf('Lumia') > -1 || u.indexOf('PlayBook') > -1,  //是否为移动终端
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/) || u.indexOf('iPad') > -1 || u.indexOf('Nexus') > -1 || u.indexOf('Lumia') > -1 || u.indexOf('PlayBook') > -1 || u.indexOf('Mobile') > -1,  //是否为移动终端
                 ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
                 android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
                 iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
@@ -413,7 +421,7 @@
             };
         }(),
         language: (navigator.browserLanguage || navigator.language).toLowerCase()
-    }
+    };
 
     console.log("语言版本: " + browser.language + "<br/>");
     console.log("是否为移动终端: " + browser.versions.mobile + "<br/>");
@@ -421,19 +429,47 @@
     console.log("android终端: " + browser.versions.android + "<br/>");
     console.log("是否为iPhone: " + browser.versions.iPhone + "<br/>");
     console.log("是否iPad: " + browser.versions.iPad + "<br/>");
-    console.log(navigator.userAgent);
+//    alert(navigator.userAgent);
     var model_str = '';
     var ipad_str = '';
     var is_iPad = browser.versions.iPad;
     var is_mobile = browser.versions.mobile;
     console.log(is_iPad);
     console.log(is_mobile);
+
     if (is_iPad) {
 //        $('.goods_show').append(ipad_str)
         $('#goods_show_ipad').css('display', 'block');
     } else {
 //        $('.goods_show').append(model_str)
         $('#goods_show_iphone').css('display', 'block');
+    }
+
+    console.log('asdasda', browser.versions.mobile);
+
+    if (browser.versions.mobile) {
+        //判断是否是移动设备打开。browser代码在下面
+        var ua = navigator.userAgent.toLowerCase();
+        //获取判断用的对象
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            //在微信中打开
+            $('.goweb').css('display', 'block');
+        } else if (ua.match(/WeiBo/i) == "weibo") {
+            //在新浪微博客户端打开
+            $('.goweb').css('display', 'block');
+        } else if (ua.match(/QQ/i) == "qq") {
+            //在QQ空间打开
+            $('.goweb').css('display', 'block');
+        } else if (ua.match(/facebook/i) == "facebook") {
+            //在QQ空间打开
+            $('.goweb').css('display', 'block');
+        } else {
+
+        }
+    } else {
+        //否则就是PC浏览器打开
+        $('.goweb').css('display', 'block');
+        $('.goweb').css('width', '480px');
     }
 
     if (!is_mobile) {
@@ -455,11 +491,14 @@
 
     var swiperFather;
     $(document).ready(function () {
+        $('.go_btn').click(function () {
+            window.location.href = 'demo/demo.html?v=2123';
+        });
+
         $('.goods_show').css('height', goods_show_height);
 //        $('.goods_show2').css('top', goods_show_top);
 //        $('.goods_show').css('display', 'block');
         if (is_iPad) {
-            console.log(1111);
             swiperFather = new Swiper('.swiper-container-ipad', {
                 direction: 'horizontal',
                 loop: false,
